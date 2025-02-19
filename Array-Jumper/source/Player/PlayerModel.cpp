@@ -7,6 +7,11 @@ namespace Player
 		current_state = new_player_state;
 	}
 
+	void PlayerModel::initialize()
+	{
+
+	}
+
 	PlayerState PlayerModel::GetPlayerState()
 	{
 		return current_state;

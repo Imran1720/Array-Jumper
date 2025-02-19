@@ -2,13 +2,16 @@
 #include "../../header/UI/UIElement/ImageView.h"
 #include "../../header/Global/Config.h"
 #include "../../header/Global/ServiceLocator.h"
+#include "../../header/Player/PlayerController.h"
+#include "../../header/Player/PlayerModel.h"
 
 using namespace UI;
 using namespace Global;
 namespace Player
 {
-	PlayerView::PlayerView()
+	PlayerView::PlayerView(PlayerController* controller)
 	{
+		player_controller = controller;
 		game_window = nullptr;
 		player_image = new UIElement::ImageView();
 	}
@@ -18,14 +21,17 @@ namespace Player
 
 	void PlayerView::update()
 	{
-
 	}
 
 	void PlayerView::render()
 	{
-
+		switch (player_controller->GetPlayerState())
+		{
+		case PlayerState::Alive :
+			DrawPlayer();
+			break;
+		}
 	}
-
 
 
 	void PlayerView::initialize()
@@ -58,7 +64,7 @@ namespace Player
 
 	Vector2f PlayerView::CalculatePlayerPosition()
 	{
-		return Vector2f(0,0);
+		return Vector2f(0, 0);
 	}
 
 	void PlayerView::UpdatePlayerPosition()

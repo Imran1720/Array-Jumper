@@ -7,11 +7,14 @@ using namespace UI;
 
 namespace Player
 {
+	class PlayerController;
+
 	class PlayerView
 	{
 	private:
 		RenderWindow* game_window;
 		UIElement::ImageView* player_image;
+		PlayerController* player_controller;
 
 		float player_width;
 		float player_height;
@@ -25,7 +28,7 @@ namespace Player
 
 	public:
 
-		PlayerView();
+		PlayerView(PlayerController* controller);
 		~PlayerView();
 		void initialize();
 		void render();

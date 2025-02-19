@@ -3,16 +3,23 @@
 #include "../../header/Event/EventService.h"
 #include "../../header/UI/UIService.h"
 #include "../../header/Sound/SoundService.h"
+#include "../../header/Player/PlayerService.h"
+
+using namespace Event;
+using namespace Sound;
 
 namespace Global
 {
+    
+    
     class ServiceLocator
     {
     private:
         Graphics::GraphicService* graphic_service;
-        Event::EventService* event_service;
-        Sound::SoundService* sound_service;
+        EventService* event_service;
+        SoundService* sound_service;
         UI::UIService* ui_service;
+        Player::PlayerService* player_service;
 
         ~ServiceLocator();
 
@@ -28,8 +35,8 @@ namespace Global
         void render();
 
         Graphics::GraphicService* getGraphicService();
-        Event::EventService* getEventService();
-        Sound::SoundService* getSoundService();
+        EventService* getEventService();
+        SoundService* getSoundService();
         UI::UIService* getUIService();
     };
 }
