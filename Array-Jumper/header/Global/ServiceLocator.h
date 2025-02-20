@@ -4,13 +4,13 @@
 #include "../../header/UI/UIService.h"
 #include "../../header/Sound/SoundService.h"
 #include "../../header/Player/PlayerService.h"
+#include "../../header/Level/LevelService.h"
 
 using namespace Event;
 using namespace Sound;
 
 namespace Global
 {
-    
     
     class ServiceLocator
     {
@@ -20,6 +20,7 @@ namespace Global
         SoundService* sound_service;
         UI::UIService* ui_service;
         Player::PlayerService* player_service;
+        Level::LevelService* level_service;
 
         ~ServiceLocator();
 
