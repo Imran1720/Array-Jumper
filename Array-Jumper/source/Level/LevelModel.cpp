@@ -2,8 +2,18 @@
 
 namespace Level
 {
+	LevelModel::LevelModel()
+	{
+	}
+	LevelModel::~LevelModel()
+	{
+	}
 	void LevelModel::initialize()
 	{
 
+	}
+	BlockType LevelModel::GetCurretBlockType(int current_position)
+	{
+		return current_level_data.level_boxes[current_position];
 	}
 }
