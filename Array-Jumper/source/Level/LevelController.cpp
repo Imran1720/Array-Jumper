@@ -30,6 +30,12 @@ namespace Level
 		level_view->render();
 	}
 
+	BlockType LevelController::GetCurretBlockType(int current_position)
+	{
+		//return level_model->GetCurretBlockType(current_position);
+		return BlockType::BLOCK_ONE;
+	}
+
 	void LevelController::destroy()
 	{
 		delete(level_model);
