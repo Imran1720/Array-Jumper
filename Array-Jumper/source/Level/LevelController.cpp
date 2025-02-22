@@ -36,6 +36,11 @@ namespace Level
 		//return BlockType::BLOCK_ONE;
 	}
 
+	BoxDimension LevelController::GetBoxDimensions()
+	{
+		return level_view->GetBoxDimensions();
+	}
+
 	void LevelController::destroy()
 	{
 		delete(level_model);

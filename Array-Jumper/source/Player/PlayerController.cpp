@@ -41,6 +41,11 @@ namespace Player
 		return player_model->GetPlayerState();
 	}
 
+	int PlayerController::GetPlayerPosition()
+	{
+		return player_model->GetCurrentPosition();
+	}
+
 	void PlayerController::destroy()
 	{
 		delete(player_model);

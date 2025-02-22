@@ -4,6 +4,9 @@
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/Player/PlayerController.h"
 #include "../../header/Player/PlayerModel.h"
+#include <iostream>
+
+using namespace std;
 
 using namespace UI;
 using namespace Global;
@@ -21,6 +24,12 @@ namespace Player
 
 	void PlayerView::update()
 	{
+		switch (player_controller->GetPlayerState())
+		{
+		case PlayerState::Alive:
+		UpdatePlayerPosition();
+			break;
+		}
 	}
 
 	void PlayerView::render()
@@ -54,8 +63,10 @@ namespace Player
 
 	void PlayerView::CalculatePlayerDimension()
 	{
-		player_width = 1000.0f;
-		player_height = 1000.0f;
+		current_box_dimension = ServiceLocator::getInstance()->getLevelService()->GetBoxDimensions();
+		cout<< current_box_dimension.box_height<<endl;
+		player_width = current_box_dimension.box_width;
+		player_height = current_box_dimension.box_height;
 	}
 	void PlayerView::DrawPlayer()
 	{
@@ -64,7 +75,9 @@ namespace Player
 
 	Vector2f PlayerView::CalculatePlayerPosition()
 	{
-		return Vector2f(0, 0);
+		float xPosition = current_box_dimension.box_spacing + static_cast<float>(player_controller->GetPlayerPosition()) * (current_box_dimension.box_width + current_box_dimension.box_spacing);
+		float yPosition = static_cast<float>(game_window->getSize().y)-current_box_dimension.bottom_offset-current_box_dimension.box_height -player_height;
+		return Vector2f(xPosition, yPosition);
 	}
 
 	void PlayerView::UpdatePlayerPosition()

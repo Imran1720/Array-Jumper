@@ -39,5 +39,6 @@ namespace Global
         EventService* getEventService();
         SoundService* getSoundService();
         UI::UIService* getUIService();
+        Level::LevelService* getLevelService();
     };
 }

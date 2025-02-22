@@ -47,7 +47,7 @@ namespace Level
 		void update();
 		void render();
 
-		void CalculateBoxDiemension();
+		void CalculateBoxDimension();
 
 		UIElement::ImageView* GetBoxOverlayImage(BlockType block_type);
 
@@ -56,5 +56,6 @@ namespace Level
 		void CalculateBoxWidthAndHeight();
 		void CalculateBoxSpacing();
 		Vector2f CalculateBoxPositions(int index);
+		BoxDimension GetBoxDimensions();
 	};
 }

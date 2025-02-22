@@ -3,7 +3,9 @@
 #include "../../header/Level/LevelController.h"
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/Global/Config.h"
+#include <iostream>
 
+using namespace std;
 using namespace Global;
 
 namespace Level
@@ -22,7 +24,7 @@ namespace Level
 	void LevelView::initialize()
 	{
 		game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
-		CalculateBoxDiemension();
+		CalculateBoxDimension();
 		initializeImages();
 	}
 
@@ -64,7 +66,7 @@ namespace Level
 		drawLevel();
 	}
 
-	void LevelView::CalculateBoxDiemension()
+	void LevelView::CalculateBoxDimension()
 	{
 		if (!game_window)
 		{
@@ -141,6 +143,13 @@ namespace Level
 		float xPosition = box_dimensions.box_spacing + static_cast<float>(index) * (box_dimensions.box_width+box_dimensions.box_spacing);
 		float yPosition = static_cast<float>(game_window->getSize().y) - box_dimensions.bottom_offset - box_dimensions.box_height;
 		return Vector2f(xPosition,yPosition);
+	}
+
+	BoxDimension LevelView::GetBoxDimensions()
+	{
+		game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
+		CalculateBoxDimension();
+		return box_dimensions;
 	}
 
 	

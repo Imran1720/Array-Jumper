@@ -1,5 +1,7 @@
 #pragma once
 #include "../../header/Level/BlockType.h"
+#include "../../header/Level/LevelModel.h"
+
 namespace Level
 {
 	class LevelView;
@@ -21,5 +23,7 @@ namespace Level
 		void update();
 		void render();
 		BlockType GetCurretBlockType(int current_position);
+
+		BoxDimension GetBoxDimensions();
 	};
 }
