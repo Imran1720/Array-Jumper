@@ -23,6 +23,6 @@ namespace Level
 		~LevelModel();
 		void initialize();
 
-		BlockType GetCurretBlockType(int current_position);
+		BlockType GetCurretBoxValue(int current_position);
 	};
 }

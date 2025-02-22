@@ -12,7 +12,7 @@ namespace Level
 	{
 
 	}
-	BlockType LevelModel::GetCurretBlockType(int current_position)
+	BlockType LevelModel::GetCurretBoxValue(int current_position)
 	{
 		return current_level_data.level_boxes[current_position];
 	}

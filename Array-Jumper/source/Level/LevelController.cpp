@@ -32,8 +32,8 @@ namespace Level
 
 	BlockType LevelController::GetCurretBlockType(int current_position)
 	{
-		//return level_model->GetCurretBlockType(current_position);
-		return BlockType::BLOCK_ONE;
+		return level_model->GetCurretBoxValue(current_position);
+		//return BlockType::BLOCK_ONE;
 	}
 
 	void LevelController::destroy()

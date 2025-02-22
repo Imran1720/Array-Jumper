@@ -12,8 +12,9 @@ namespace Level
 			BlockType::BLOCK_TWO,
 			BlockType::BLOCK_THREE,
 			BlockType::OBSTACLE_TWO,
-			BlockType::BLOCK_TWO,
 			BlockType::BLOCK_ONE,
+			BlockType::BLOCK_TWO,
+			BlockType::OBSTACLE_ONE,
 			BlockType::TARGET,
 		};
 	};

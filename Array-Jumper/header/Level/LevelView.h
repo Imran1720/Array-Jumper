@@ -47,12 +47,14 @@ namespace Level
 		void update();
 		void render();
 
-		void CalculateBoxDiemnsion();
+		void CalculateBoxDiemension();
 
 		UIElement::ImageView* GetBoxOverlayImage(BlockType block_type);
 
 		void DrawBox(Vector2f position);
 		void DrawBoxValue(Vector2f position,BlockType box_vale);
-
+		void CalculateBoxWidthAndHeight();
+		void CalculateBoxSpacing();
+		Vector2f CalculateBoxPositions(int index);
 	};
 }
