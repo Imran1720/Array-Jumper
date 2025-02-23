@@ -38,4 +38,8 @@ namespace Player
 	{
 		return player_controller->GetPlayerPosition();
 	}
+	void PlayerService::LevelComplete()
+	{
+		player_controller->reset();
+	}
 }

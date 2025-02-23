@@ -20,8 +20,10 @@ namespace Gameplay
 		void render();
 
 		void ProcessObstacle();
+		void ProcessEndBlock();
 
 		bool isObstacle(BlockType blockType);
 		void onPositionChanged(int position);
+		bool isEndBlock(BlockType value);
 	};
 }

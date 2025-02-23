@@ -40,5 +40,6 @@ namespace Player
 		BlockType getCurrentBoxValue(int currentPosition);
 
 		void TakeDamage();
+		void reset();
 	};
 }

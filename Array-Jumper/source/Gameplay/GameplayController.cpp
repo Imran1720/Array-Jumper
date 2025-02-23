@@ -1,8 +1,9 @@
 #include "../../header/Gameplay/GameplayController.h"
 #include "../../header/Global/ServiceLocator.h"
+#include "../../header/Main/GameService.h"
 
 using namespace Global;
-
+using namespace Main;
 
 namespace Gameplay
 {
@@ -34,6 +35,13 @@ namespace Gameplay
 		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::DEATH);
 	}
 
+	void GameplayController::ProcessEndBlock()
+	{
+		ServiceLocator::getInstance()->getPlayerService()->LevelComplete();
+		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::LEVEL_COMPLETE);
+		GameService::setGameState(GameState::CREDITS);
+	}
+
 	bool GameplayController::isObstacle(BlockType blockType)
 	{
 		if (blockType == BlockType::OBSTACLE_TWO || blockType == BlockType::OBSTACLE_ONE)
@@ -51,6 +59,19 @@ namespace Gameplay
 		{
 			ProcessObstacle();
 		}
+		if (isEndBlock(current_block_type))
+		{
+			ProcessEndBlock();
+		}
+	}
+
+	bool GameplayController::isEndBlock(BlockType value)
+	{
+		if (value == BlockType::TARGET)
+		{
+			return true;
+		}
+		return false;
 	}
 
 	void GameplayController::destroy()
