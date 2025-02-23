@@ -33,6 +33,11 @@ namespace Level
 		return level_controller->GetBoxDimensions();
 	}
 
+	BlockType LevelService::GetCurrentBlockType(int currentPosition)
+	{
+		return level_controller->GetCurretBlockType(currentPosition);
+	}
+
 	void LevelService::destroy()
 	{
 		delete(level_controller);

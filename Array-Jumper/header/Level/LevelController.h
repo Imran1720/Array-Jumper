@@ -25,5 +25,6 @@ namespace Level
 		BlockType GetCurretBlockType(int current_position);
 
 		BoxDimension GetBoxDimensions();
+
 	};
 }

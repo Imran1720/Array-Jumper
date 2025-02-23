@@ -30,4 +30,20 @@ namespace Player
 	{
 		player_controller->render();
 	}
+	void PlayerService::TakeDamage()
+	{
+		player_controller->TakeDamage();
+	}
+	int PlayerService::GetPlayerPosition()
+	{
+		return player_controller->GetPlayerPosition();
+	}
+	void PlayerService::LevelComplete()
+	{
+		player_controller->reset();
+	}
+	int PlayerService::GetCurrentLives()
+	{
+		return player_controller->GetCurrentLives();
+	}
 }
