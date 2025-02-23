@@ -39,5 +39,6 @@ namespace Player
 		int GetPlayerPosition();
 		BlockType getCurrentBoxValue(int currentPosition);
 
+		void TakeDamage();
 	};
 }

@@ -5,6 +5,7 @@
 #include "../../header/Sound/SoundService.h"
 #include "../../header/Player/PlayerService.h"
 #include "../../header/Level/LevelService.h"
+#include "../../header/Gameplay/GameplayService.h"
 
 using namespace Event;
 using namespace Sound;
@@ -21,6 +22,7 @@ namespace Global
         UI::UIService* ui_service;
         Player::PlayerService* player_service;
         Level::LevelService* level_service;
+        Gameplay::GameplayService* gameplay_service;
 
         ~ServiceLocator();
 
@@ -40,5 +42,6 @@ namespace Global
         SoundService* getSoundService();
         UI::UIService* getUIService();
         Level::LevelService* getLevelService();
+        Player::PlayerService* getPlayerService();
     };
 }

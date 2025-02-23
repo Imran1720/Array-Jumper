@@ -26,4 +26,9 @@ namespace Player
 	{
 		return current_position;
 	}
+	void PlayerModel::resetPlayer()
+	{
+		current_position = 0;
+		SetPlayerState(PlayerState::Alive);
+	}
 }

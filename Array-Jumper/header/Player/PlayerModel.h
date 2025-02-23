@@ -20,6 +20,7 @@ namespace Player
 		void initialize();
 		void SetPlayerPosition(int new_position);
 		int GetCurrentPosition();
+		void resetPlayer();
 
 	};
 }

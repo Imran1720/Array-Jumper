@@ -161,6 +161,11 @@ namespace Player
 		return ServiceLocator::getInstance()->getLevelService()->GetCurrentBlockType(currentPosition);
 	}
 
+	void PlayerController::TakeDamage()
+	{
+		player_model->resetPlayer();
+	}
+
 
 	void PlayerController::destroy()
 	{

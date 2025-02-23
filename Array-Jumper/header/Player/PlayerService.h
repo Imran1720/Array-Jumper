@@ -15,5 +15,8 @@ namespace Player
 		void initialize();
 		void update();
 		void render();
+		void TakeDamage();
+		int GetPlayerPosition();
+
 	};
 }

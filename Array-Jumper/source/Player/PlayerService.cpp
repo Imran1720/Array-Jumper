@@ -30,4 +30,12 @@ namespace Player
 	{
 		player_controller->render();
 	}
+	void PlayerService::TakeDamage()
+	{
+		player_controller->TakeDamage();
+	}
+	int PlayerService::GetPlayerPosition()
+	{
+		return player_controller->GetPlayerPosition();
+	}
 }
