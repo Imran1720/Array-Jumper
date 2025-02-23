@@ -43,5 +43,6 @@ namespace Global
         UI::UIService* getUIService();
         Level::LevelService* getLevelService();
         Player::PlayerService* getPlayerService();
+        Gameplay::GameplayService* getGameplayService();
     };
 }

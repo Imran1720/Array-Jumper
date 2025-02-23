@@ -9,8 +9,8 @@ namespace Player
 
 	void PlayerModel::initialize()
 	{
-
-	}
+		resetPlayer();
+	}	
 
 	PlayerState PlayerModel::GetPlayerState()
 	{
@@ -28,7 +28,24 @@ namespace Player
 	}
 	void PlayerModel::resetPlayer()
 	{
-		current_position = 0;
+		ResetPosition();
+		current_lives = max_lives;
 		SetPlayerState(PlayerState::Alive);
 	}
+	int PlayerModel::GetCurrentLives()
+	{
+		return current_lives;
+	}
+
+	void PlayerModel::DecrementLives()
+	{
+		current_lives--;
+	}
+
+	void PlayerModel::ResetPosition()
+	{
+		current_position = 0;
+	}
+
+
 }

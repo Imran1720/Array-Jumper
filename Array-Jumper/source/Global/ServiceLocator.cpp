@@ -103,4 +103,8 @@ namespace Global
 	{
 		return player_service;
 	}
+	Gameplay::GameplayService* ServiceLocator::getGameplayService()
+	{
+		return gameplay_service;
+	}
 }

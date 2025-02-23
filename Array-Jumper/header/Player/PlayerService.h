@@ -18,6 +18,6 @@ namespace Player
 		void TakeDamage();
 		int GetPlayerPosition();
 		void LevelComplete();
-
+		int GetCurrentLives();
 	};
 }

@@ -74,6 +74,17 @@ namespace Gameplay
 		return false;
 	}
 
+	void GameplayController::gameOver()
+	{
+		GameService::setGameState(GameState::CREDITS);
+		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::DEATH);
+	}
+
+	void GameplayController::onDeath()
+	{
+		gameOver();
+	}
+
 	void GameplayController::destroy()
 	{
 	}

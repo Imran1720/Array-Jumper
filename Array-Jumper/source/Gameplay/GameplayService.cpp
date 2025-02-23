@@ -29,6 +29,11 @@ namespace Gameplay
 		gameplay_controller->render();
 	}
 
+	void GameplayService::onDeath()
+	{
+		gameplay_controller->onDeath();
+	}
+
 	void GameplayService::destroy()
 	{
 		delete(gameplay_controller);
