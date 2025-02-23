@@ -62,7 +62,7 @@ namespace Level
             {
                 for (int j = 0; j < LevelData::number_of_boxes; j++)
                 {
-                    levels[i].level_boxes[j] = level_1[j];
+                    levels[i].level_boxes[j] = i==0?level_1[j]:i==1?level_2[j]:level_3[j];
                 }
             }
         }
