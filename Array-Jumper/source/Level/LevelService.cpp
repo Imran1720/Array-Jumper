@@ -38,6 +38,27 @@ namespace Level
 		return level_controller->GetCurretBlockType(currentPosition);
 	}
 
+	int LevelService::GetCurrentLevelIndex()
+	{
+		return level_controller->GetCurrentLevelIndex();
+	}
+
+	bool LevelService::isLastLevel()
+	{
+		return level_controller->isLastLevel();
+	}
+
+	void LevelService::LoadNextLevel()
+	{
+		level_controller->LoadNextLevel();
+	}
+
+	void LevelService::reset()
+	{
+		level_controller->reset();
+	}
+
+
 	void LevelService::destroy()
 	{
 		delete(level_controller);

@@ -26,5 +26,10 @@ namespace Level
 
 		BoxDimension GetBoxDimensions();
 
+		bool isLastLevel();
+		void LoadNextLevel();
+		void reset();
+		int GetCurrentLevelIndex();
+
 	};
 }
