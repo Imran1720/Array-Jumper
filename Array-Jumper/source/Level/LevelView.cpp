@@ -147,8 +147,8 @@ namespace Level
 
 	BoxDimension LevelView::GetBoxDimensions()
 	{
-		game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
-		CalculateBoxDimension();
+		//game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
+		//CalculateBoxDimension();
 		return box_dimensions;
 	}
 
