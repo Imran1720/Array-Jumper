@@ -26,8 +26,6 @@ namespace Level
 		UI::UIElement::ImageView* obstacle_one_overlay_image;
 		UI::UIElement::ImageView* obstacle_two_overlay_image;
 
-
-
 		BoxDimension box_dimensions;
 
 		const float background_alpha = 110.0f;

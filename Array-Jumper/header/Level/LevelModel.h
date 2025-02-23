@@ -11,7 +11,6 @@ namespace Level
 
 		float box_spacing_percentage = 0.3f;
 		float bottom_offset = 200.0f;
-
 	};
 
 	class LevelModel
