@@ -15,10 +15,13 @@ namespace Gameplay
 		const float right_offset = 250.f;
 
 		UIElement::TextView* life_count_text;
+		UIElement::TextView* level_count_text;
 
 		void destroy();
 		void initializeLifeCountText();
+		void initializeLevelCountText();
 		void updateLifeCountText();
+		void updateLevelCountText();
 
 	public:
 		GameplayUIController();

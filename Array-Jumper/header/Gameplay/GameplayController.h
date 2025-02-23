@@ -27,5 +27,8 @@ namespace Gameplay
 		bool isEndBlock(BlockType value);
 		void gameOver();
 		void onDeath();
+		void gameWon();
+		void LoadnextLevel();
+		bool isLastLevel();
 	};
 }
