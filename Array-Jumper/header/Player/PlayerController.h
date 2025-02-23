@@ -1,6 +1,9 @@
 #pragma once
 #include "../../header/Event/EventService.h"
+#include "../../header/Level/BlockType.h"
+#include <string>
 
+using namespace Level;
 using namespace Event;
 
 namespace Player
@@ -30,8 +33,11 @@ namespace Player
 		PlayerState GetPlayerState();
 
 		void Move(MovementDirection direction);
+		void Jump(MovementDirection direction);
 		bool IsPositionInBound(int targetPosition);
 		void ReadPlayerInput();
 		int GetPlayerPosition();
+		BlockType getCurrentBoxValue(int currentPosition);
+
 	};
 }

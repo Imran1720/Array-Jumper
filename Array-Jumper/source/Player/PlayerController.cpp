@@ -4,6 +4,10 @@
 #include "../../header/Player/MovementDirection.h"
 #include "../../header/Global/ServiceLocator.h"
 
+#include <iostream>
+#include <string>
+using namespace std;
+
 using namespace Global;
 
 namespace Player
@@ -76,6 +80,38 @@ namespace Player
 		
 	}
 
+	void PlayerController::Jump(MovementDirection direction)
+	{
+		int step, targetPosition;
+		int currentPosition = player_model->GetCurrentPosition();
+		BlockType box_value = getCurrentBoxValue(currentPosition);
+
+		switch (direction)
+		{
+		case MovementDirection::BACKWARD:
+			step = -(int)box_value;
+			break;
+		case MovementDirection::FORWARD:
+			step = (int)box_value;
+			break;
+		default:
+			step = 0;
+			break;
+		}
+
+		targetPosition = currentPosition + step;
+
+		if (!IsPositionInBound(targetPosition))
+		{
+			return;
+		}
+
+		player_model->SetPlayerPosition(targetPosition);
+		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::JUMP);
+
+
+	}
+
 	bool PlayerController::IsPositionInBound(int targetPosition)
 	{
 		if (targetPosition > 0 && targetPosition < LevelData::number_of_boxes)
@@ -87,13 +123,31 @@ namespace Player
 
 	void PlayerController::ReadPlayerInput()
 	{
-		if (event_service->pressedAKey() || event_service->pressedLeftArrowKey())
+		
+		if (event_service->heldSpaceKey())
 		{
-			Move(MovementDirection::BACKWARD);
+			if (event_service->pressedAKey() || event_service->pressedLeftArrowKey())
+			{
+					Jump(MovementDirection::BACKWARD);
+				
+			}
+			if (event_service->pressedDKey() || event_service->pressedRightArrowKey())
+			{
+				Jump(MovementDirection::FORWARD);
+
+			}
 		}
-		if (event_service->pressedDKey() || event_service->pressedRightArrowKey())
+		else
 		{
-			Move(MovementDirection::FORWARD);
+			if (event_service->pressedAKey() || event_service->pressedLeftArrowKey())
+			{
+				Move(MovementDirection::BACKWARD);
+
+			}
+			if (event_service->pressedDKey() || event_service->pressedRightArrowKey())
+			{
+				Move(MovementDirection::FORWARD);
+			}
 		}
 	}
 
@@ -101,6 +155,12 @@ namespace Player
 	{
 		return player_model->GetCurrentPosition();
 	}
+
+	BlockType PlayerController::getCurrentBoxValue(int currentPosition)
+	{
+		return ServiceLocator::getInstance()->getLevelService()->GetCurrentBlockType(currentPosition);
+	}
+
 
 	void PlayerController::destroy()
 	{

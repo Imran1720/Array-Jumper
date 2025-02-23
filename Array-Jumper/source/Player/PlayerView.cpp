@@ -64,7 +64,6 @@ namespace Player
 	void PlayerView::CalculatePlayerDimension()
 	{
 		current_box_dimension = ServiceLocator::getInstance()->getLevelService()->GetBoxDimensions();
-		cout<< current_box_dimension.box_height<<endl;
 		player_width = current_box_dimension.box_width;
 		player_height = current_box_dimension.box_height;
 	}
